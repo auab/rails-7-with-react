@@ -12,11 +12,23 @@ const QuestionDetail = (props) => {
       <p className="lead">
         <span className='badge bg-primary'>{props.question.tag}</span>
       </p>
-      <button className="btn btn-primary mt-1" onClick={() =>
+      <button type="button" className="btn btn-primary position-relative" onClick={() =>
+        setLikeCount(likeCount+1)}>
+        Like
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        { likeCount > 0 ?
+      <span>
+        {likeCount}
+      </span>
+        :''
+      }
+        </span>
+      </button>
+      {/* <button className="btn btn-primary mt-1" onClick={() =>
         setLikeCount(likeCount+1)}>
           Like
-      </button>
-      { likeCount > 0 ?
+      </button> */}
+      {/* { likeCount > 0 ?
       <span>
         <span className="badge bg-primary">{likeCount}</span>
         <button className="btn btn-primary mt-1" onClick={() =>
@@ -25,7 +37,7 @@ const QuestionDetail = (props) => {
         </button>
       </span>
         :''
-      }
+      } */}
     </div>
   </div>
   )
